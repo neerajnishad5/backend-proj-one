@@ -1,0 +1,102 @@
+
+# request to get all the customers
+GET http://localhost:4000/customer-api/customers
+
+###
+
+# request to get all the products
+GET http://localhost:4000/product-api/product
+
+
+###
+
+# creating a product
+
+POST http://localhost:4000/product-api/product
+Content-Type: application/json
+
+{
+    
+    "product_name": "shampoo",
+    "product_price": 45.32
+}
+
+
+###
+
+# creating a customer
+
+POST http://localhost:4000/customer-api/customer
+Content-Type: application/json
+
+{
+    
+    "customer_name": "maya",
+    "customer_email": "maya@mail.com"
+}
+
+###
+
+# posting reviews for a particular customer and product
+POST http://localhost:4000/customer-api/customer-review
+Content-Type: application/json
+
+{
+    
+    "review_date": "2008-11-11 13:23:44",
+    "review_desc": "something new 2",
+    "customer_id": 1,
+    "product_id": 1
+}
+ 
+###
+
+# get all the reviews 
+GET http://localhost:4000/customer-api/reviews
+
+###
+
+
+# request to get all the reivews of a particular customer
+GET http://localhost:4000/customer-api/reviews/cust-id/1
+
+###
+
+GET http://localhost:4000/order-api/orders/order-id/1
+
+###
+
+POST http://localhost:4000/order-api/order
+Content-Type: application/json
+
+{
+    "order_date": "22.1.23",
+    "customer_id": 1,
+    "product_id": 1
+}
+
+
+###
+
+GET http://localhost:4000/address-api/address/1
+
+###
+
+POST http://localhost:4000/address-api/address/customer-email/maya@mail.com
+Content-Type: application/json
+
+{
+    "customer_id": 1,
+    "customer_email": "maya@mail.com",
+    "address": {
+        "address_id": 1,
+        "street": "something",
+        "city": "hyd",
+        "state": "ts",
+        "pincode": "580001"
+    }
+}
+
+###
+
+GET http://localhost:4000/order-api/
